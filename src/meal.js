@@ -15,18 +15,40 @@ function createMenuItem(name, price, type) {
 
 // addIngredients
 function addIngredients(item1, ingredients) {
- ingredients.push(item1)
+  if (ingredients.includes(item1)) {
+    return
+  } else {
+    return ingredients.push(item1)
+  }
 }
-// Working notes // - I didnt include return because we are only needing to put the item in the array.
+
+// formatPrice
+function formatPrice(price) {
+return "$" + price
+}
+
+// decreasePrice
+function decreasePrice(price) {
+return price - (price * .1)
+}
+
+// createRecipe
+function createRecipe(title, ingredients, type) {
+  return recipe = {
+    title: title,
+    ingredients: ingredients,
+    type: type,
+}
+}
 
 
 module.exports = {
   nameMenuItem,
   createMenuItem,
   addIngredients,
-  // formatPrice,
-  // decreasePrice,
-  // createRecipe
+  formatPrice,
+  decreasePrice,
+  createRecipe
 }
 
 
